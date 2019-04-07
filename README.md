@@ -1,2 +1,3 @@
-# SpringBoot
-SpringBoot module
+Spring Boot module
+example for:
+JPA
