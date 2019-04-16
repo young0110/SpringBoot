@@ -4,6 +4,8 @@ import com.spring.demo.model.form.SysUserForm;
 
 public interface SysUserService {
 
+    int checkSysUser(String userName, String idCardNo, String mobile);
+
     /**
      * new sysUser info
      * @param form

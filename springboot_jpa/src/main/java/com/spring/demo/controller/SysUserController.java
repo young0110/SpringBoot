@@ -28,6 +28,8 @@ public class SysUserController {
         @ApiParam(value = "身份证号码", required = true) @RequestParam String idCardNo,
         @ApiParam(value = "是否返回用户编号") @RequestParam(required = false) boolean flag
     ) {
+        if (1 == sysUserService.checkSysUser(userName, idCardNo, mobile))
+            return new ResultData(-1,"用户已存在");
         String id = sysUserService.newSysUser(
                 SysUserForm.builder()
                            .userName(userName)
