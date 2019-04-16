@@ -23,7 +23,7 @@ public class CorsConfig extends WebMvcConfigurationSupport {
 
   @Override
   protected void addInterceptors(InterceptorRegistry registry) {
-    registry.addInterceptor(new AuthTokenInterceptor()).addPathPatterns("/api/**").excludePathPatterns(Arrays.asList("/api/common/*", "/api/public/*"));
+    registry.addInterceptor(new AuthTokenInterceptor()).addPathPatterns("/api/**").excludePathPatterns(Arrays.asList("/api/common/*", "/api/user/*"));
   }
 
   @Override

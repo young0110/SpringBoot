@@ -46,11 +46,10 @@ public class WebLogAspect {
     for (Object arg : point.getArgs()) {
       if (attr == null || (arg != null && arg != attr.getRequest() && arg != attr.getResponse())) {
         sb.append("&")
-            .append(params[i])
+            .append(params[i++])
             .append("=")
-            .append(new Gson().toJson(arg));
+            .append(arg);
       }
-      i += 1;
     }
     log.info(sb.toString());
   }
