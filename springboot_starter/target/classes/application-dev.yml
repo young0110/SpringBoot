@@ -1,3 +1,0 @@
-swagger:
-  enable: true
-  url: localhost:${server.port}
