@@ -1,6 +1,7 @@
 swagger:
   enable: true
-  url: localhost:8686
+  host: localhost:8686
+  base-package: com.spring.demo.controller
 
 #spring:
 #  datasource:
