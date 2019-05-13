@@ -1,0 +1,10 @@
+server:
+  port: 8686
+
+spring:
+  profiles:
+    active: dev
+  redis:
+    host: 129.211.97.13
+    port: 6379
+    timeout: 60S
