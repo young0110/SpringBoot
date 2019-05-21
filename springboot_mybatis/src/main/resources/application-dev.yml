@@ -1,0 +1,13 @@
+swagger:
+  enable: true
+  url: localhost:8686
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/youngth?serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: young0110!
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
