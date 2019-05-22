@@ -3,13 +3,12 @@ package com.spring.demo.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * description
@@ -59,6 +58,14 @@ public class BasicDataStack implements CommandLineRunner {
     redisTemplate.opsForValue().set("session-id:1s3e-4r5H-xl43-00Jd", info);
     LoginInfo loginInfo = (LoginInfo) redisTemplate.opsForValue().get("session-id:1s3e-4r5H-xl43-00Jd");
     log.info("LoginInfo:{}", loginInfo);
+
+    Map map = new HashMap();
+    map.put("a", 1);
+    map.put("b", 2);
+    map.put("c", 3);
+    HashOperations<String, String, Object> hashOperations = redisTemplate.opsForHash();
+    hashOperations.putAll("map", map);
+    log.info("map->a:{}", hashOperations.getOperations().opsForHash().get("map", "a"));
   }
 
 }
