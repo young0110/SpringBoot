@@ -16,6 +16,11 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * RedisTemplate是对Jedis做了封装，官方推荐使用RedisTemplate
+ * RedisTemplate常用接口如下：
+ * private ValueOperations<K, V> valueOps;
+ * private ListOperations<K, V> listOps;
+ * private SetOperations<K, V> setOps;
+ * private ZSetOperations<K, V> zSetOps;
  */
 @EnableCaching
 @Configuration
@@ -23,7 +28,6 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-
         return RedisCacheManager.builder(connectionFactory).build();
     }
 
@@ -43,7 +47,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
         // value序列化方式采用jackson
         redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
-        // hash的value序列化方式采用jackson
+        // hash的value序列化方式也采用jackson
         redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
