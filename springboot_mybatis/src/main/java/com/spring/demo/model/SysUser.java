@@ -1,18 +1,14 @@
 package com.spring.demo.model;
 
 import com.spring.demo.utils.Md5Utils;
-import lombok.Getter;
-import lombok.Setter;
-import javax.persistence.Entity;
+import lombok.Data;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
+@Data
 @Table(name = "sys_user")
-@Getter
-@Setter
 public class SysUser implements Serializable {
 
     @Id
