@@ -1,4 +1,4 @@
-package com.spring.demo.model.common;
+package com.spring.mybatis.model.common;
 
 import lombok.Getter;
 import lombok.ToString;

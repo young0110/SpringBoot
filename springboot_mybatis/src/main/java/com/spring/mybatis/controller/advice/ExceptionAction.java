@@ -1,7 +1,7 @@
-package com.spring.demo.controller.advice;
+package com.spring.mybatis.controller.advice;
 
-import com.spring.demo.model.common.Msg;
-import com.spring.demo.model.common.ResultData;
+import com.spring.mybatis.model.common.Msg;
+import com.spring.mybatis.model.common.ResultData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -19,7 +19,7 @@ public class ExceptionAction {
   /**
    * 通用异常处理，待完善
    * @param e 未捕获的异常
-   * @return
+   * @return ResultData
    */
   @ExceptionHandler({Exception.class})
   public ResultData exception(Exception e) {

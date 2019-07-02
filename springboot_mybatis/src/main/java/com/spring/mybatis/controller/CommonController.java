@@ -1,7 +1,7 @@
-package com.spring.demo.controller;
+package com.spring.mybatis.controller;
 
-import com.spring.demo.model.common.Msg;
-import com.spring.demo.model.common.ResultData;
+import com.spring.mybatis.model.common.Msg;
+import com.spring.mybatis.model.common.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;

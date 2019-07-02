@@ -1,6 +1,6 @@
-package com.spring.demo.model;
+package com.spring.mybatis.model;
 
-import com.spring.demo.utils.Md5Utils;
+import com.spring.mybatis.utils.Md5Utils;
 import lombok.Data;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@Table(name = "sys_user")
+@Table(name = "t_sys_user")
 public class SysUser implements Serializable {
 
     @Id
@@ -16,11 +16,14 @@ public class SysUser implements Serializable {
     private String userName;
     private String password;
     private String mobile;
+    private String email;
     private int sex;
-    private Integer role;
     private String realName;
     private String idCardNo;
     private String sys;
+    private String ext;
+    private String openid;
+    private Integer status;
     private Date insertTime;
     private Date updateTime;
 

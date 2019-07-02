@@ -1,4 +1,4 @@
-package com.spring.demo.config;
+package com.spring.mybatis.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +20,7 @@ import java.util.List;
 
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages = { "com.spring.demo.controller" })
+@ComponentScan(basePackages = { "com.spring.mybatis.controller" })
 public class SwaggerConfig {
 
   @Value("${swagger.enable}")
@@ -43,9 +43,9 @@ public class SwaggerConfig {
   private List<SecurityContext> securityContext() {
     return Collections.singletonList(
             SecurityContext.builder()
-                           .securityReferences(defaultAuth())
+                           //.securityReferences(defaultAuth())
                            //.forPaths(PathSelectors.ant("/api/common/*"))
-                           .forPaths(PathSelectors.regex("/api/!common.*"))
+                           //.forPaths(PathSelectors.regex("/api/!common.*"))
                            .build()
     );
   }
@@ -62,12 +62,12 @@ public class SwaggerConfig {
               .host(url)
               .enable(enable)
               .select()
-              .apis(RequestHandlerSelectors.basePackage("com.spring.demo.controller"))
+              .apis(RequestHandlerSelectors.basePackage("com.spring.mybatis.controller"))
               .build()
               .directModelSubstitute(org.joda.time.LocalDate.class, java.sql.Date.class)
               .directModelSubstitute(org.joda.time.DateTime.class, java.util.Date.class)
-              .securitySchemes(securitySchemes())
-              .securityContexts(securityContext())
+              //.securitySchemes(securitySchemes())
+              //.securityContexts(securityContext())
               .apiInfo(apiInfo());
   }
 

@@ -1,6 +1,5 @@
-package com.spring.demo.utils;
+package com.spring.mybatis.utils;
 
-import com.spring.demo.model.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,4 +1,4 @@
-package com.spring.demo.model.common;
+package com.spring.mybatis.model.common;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
