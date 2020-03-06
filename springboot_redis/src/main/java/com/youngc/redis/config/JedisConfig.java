@@ -26,16 +26,17 @@ public class JedisConfig {
     @Value("${spring.redis.jedis.pool.max-wait}")
     private long maxWaitMillis;
 
-    @Value("${spring.redis.password}")
-    private String password;
+    // 未设置Redis密码
+    // @Value("${spring.redis.password}")
+    // private String password;
 
     @Value("${spring.redis.block-when-exhausted}")
     private boolean  blockWhenExhausted;
 
     @Bean
     public JedisPool redisPoolFactory()  throws Exception {
-        log.info("JedisPool注入成功！！");
-        log.info("redis地址：{}:{}", host, port);
+        log.info("JedisPool注入！！！");
+        log.info("redis地址：{}: {}", host, port);
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
         jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
@@ -43,6 +44,8 @@ public class JedisConfig {
         jedisPoolConfig.setBlockWhenExhausted(blockWhenExhausted);
         // 是否启用pool的jmx管理功能, 默认true
         jedisPoolConfig.setJmxEnabled(true);
-        return new JedisPool(jedisPoolConfig, host, port, timeout, password);
+        return new JedisPool(jedisPoolConfig, host, port, timeout);
+        // 未设置Redis密码
+        // return new JedisPool(jedisPoolConfig, host, port, timeout, password);
     }
 }

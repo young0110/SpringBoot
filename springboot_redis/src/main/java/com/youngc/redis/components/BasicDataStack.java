@@ -29,7 +29,7 @@ public class BasicDataStack implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    jedisTest();
+    //jedisTest();
     redisTemplateTest();
   }
 
@@ -45,7 +45,7 @@ public class BasicDataStack implements CommandLineRunner {
     log.info("roles: {}", roles);
     // 获取数据并输出
     Set<String> keys = jedis.keys("*");
-    keys.forEach(it -> log.info("key: {}", it));
+    log.info("keys: {}", keys);
   }
 
   private void redisTemplateTest () {
