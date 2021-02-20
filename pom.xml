@@ -15,18 +15,20 @@
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
-    <description>Parent pom for each project.</description>
+    <description>Parent pom for each child project.</description>
 
     <!-- 子模块 -->
     <modules>
         <module>common</module>
         <module>springboot_redis</module>
+        <module>filesystem</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
+    <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
             <!-- javaee api -->
@@ -40,6 +42,30 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>2.9.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.60</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.swagger/swagger-annotations -->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>1.5.20</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-common -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-common</artifactId>
+                <version>2.9.2</version>
             </dependency>
             <!-- lombok -->
             <dependency>

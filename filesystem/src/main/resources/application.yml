@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: filesystem
+
+server:
+  port: 1211
+
+logging:
+  config: classpath:logback.xml
+
+file:
+  dir: /data/file
+  allowType: JPGPNGTXTDOCXXLSXPDFPPTAPK
+  maxTimes: 100
+  serverHost: http://39.100.67.126:1212/file/

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+  <property name="logDir" value="./log" />
+  <property name="appName" value="filesystem" />
+  <property name="maxHistory" value="10" />
+  <property name="DATETIME" value="yyyy-MM-dd HH:mm:ss.SSS" />
+  <contextName>${appName}</contextName>
+
+  <appender name="log" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder charset="utf-8">
+      <pattern>%d{${DATETIME}} %-5level [%thread] %logger{10} -> %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logDir}/info.${appName}.log</file>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>DEBUG</level>
+      <onMatch>DENY</onMatch>
+      <onMismatch>ACCEPT</onMismatch>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <FileNamePattern>${logDir}/info.${appName}.%d{yyyy-MM-dd}.log</FileNamePattern>
+      <maxHistory>${maxHistory}</maxHistory>
+    </rollingPolicy>
+    <encoder charset="utf-8">
+      <pattern>%d{${DATETIME}} %contextName %-5level [%thread] %logger{10} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="log" />
+  </root>
+
+</configuration>
