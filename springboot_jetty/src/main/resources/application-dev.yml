@@ -1,5 +1,0 @@
-server:
-  jetty:
-    acceptors: 2
-    max-http-post-size: 500
-    selectors: 2
